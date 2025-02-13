@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+
+\input{SETUP_.tex}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+% \usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage
+[
+a4paper,
+top = 25 mm,
+bottom = 25 mm,
+left = 25 mm,
+right = 25 mm,
+]
+{
+	geometry
+}
+
+% Referencing:
+%\usepackage[backend=biber, 
+%            style = ieee,
+%            sorting = none,
+%            eventdate = iso8601,
+%            citestyle=numeric-comp, % turns on [1,2,3, ...] styling for multiple
+%            natbib = true,
+%            urldate = iso8601,]{biblatex}
+%\addbibresource{bibfile.bib}
+
+
+% Set section numbering styles ------------------------------------------------
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\numberwithin{equation}{section}
+%\counterwithin{listing}{section}
+%\captionsetup[listing]{numberbychapter=false}
+
+
+
+\title{Your title}
+
+\usepackage{hyperref} % CALL LAST
+\author{Roman Bialek}
+
+\begin{document}
+	\maketitle{}
+	%
+	%\lstinputlisting[firstline=1]{code/example.py}
+	%\section{Incompressible case with constant properties}
+	\noindent{}%
+	Text starts here
+	\begin{equation}
+		\verb|fvm::laplacian(rABf, pB) == fvc::div(pB)|
+		\notag{}
+	\end{equation}
+
+\end{document}
