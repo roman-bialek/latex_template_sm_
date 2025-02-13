@@ -1,0 +1,293 @@
+% Setup file for custom commands
+% ------------------------------------------------------------
+% Packages: geometry and utils
+% \usepackage{geometry}
+\usepackage{blindtext}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat = newest}%\pgfplotsset{compat=1.18} 
+
+% ------------------------------------------------------------
+% Packages: Mathematics
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{amsmath, bm}
+\usepackage{esint} % enables closed surface integral
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\newcommand{\defas}{\coloneqq{}}
+
+% ------------------------------------------------------------
+%   Mathematics custom
+% > Dimensional UNITS ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+\newcommand{\units}[1]
+{
+	\left[ #1 \right]
+}
+
+\newcommand{\metre}{\mrm{m}}
+
+\newcommand{\second}{\mrm{s}}
+
+\newcommand{\kelvin}{\mrm{K}}
+
+\newcommand{\kg}{\mrm{kg}}
+\newcommand{\gram}{\mrm{g}}
+
+\newcommand{\mol}{\mrm{mol}}
+
+\newcommand{\amps}{\mrm{A}}
+
+\newcommand{\pascal}{\mrm{Pa}}
+
+\newcommand{\coulomb}{\mrm{C}}
+\newcommand{\farad}{\mrm{F}}
+
+\DeclareMathOperator{\UnitsOf}{units}
+
+
+% > Math Operator Formatting  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+\newcommand{\algt}{ \, } % alg[bra] t[imes]
+
+\newcommand{\transpose}{\mathsf{T}}
+\newcommand{\cross}{\times{}}
+
+% Differential operators
+\newcommand{\de}[0]{\mathrm{d}}
+\newcommand{\dd}[2]{\frac{\mathrm{d}{#1}}{\mathrm{d} {#2}}}
+\newcommand{\ddn}[3]{\frac{\mathrm{d}^{#3}{#1}}{\mathrm{d} {#2}^{#3}}}
+
+% Partial differential commands
+\newcommand{\pd}[2]{\frac{\partial{}{#1}}{\partial{} {#2}}}
+\newcommand{\pdbrac}[2]{\frac{\partial{}}{\partial{} {#2}} \left( {#1} \right)}
+
+\newcommand{\pdn}[3]{\frac{\partial{}^{#3}{#1}}{\partial{} {#2}^{#3}}}
+\newcommand{\pdnbrac}[3]{\frac{\partial{}^{#3}}{\partial{} {#2}^{#3}} \left( {#1} \right)}
+
+
+% Total derivative operators
+\newcommand{\TD}[2]{\frac{\mathrm{D}{#1}}{\mathrm{D} {#2}}}
+\newcommand{\TDN}[3]{\frac{\mathrm{D}^{#3} {#1}}{\mathrm{D} {#2} ^{#3}}}
+
+% Mean Formatter
+\newcommand{\mean}[1]{\overline{#1}}
+
+
+% > Math Integration ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+\newcommand{\surfint}[2]{\int_{\partial{}#1} {#2} \; \mrm{d}S}
+\newcommand{\volint}[2]{\int_{#1} {#2} \; \mrm{d}\mathcal{V}}
+
+% provides `D`irect underscore (\partial-less)
+\newcommand{\surfintD}[2]{\int_{#1} {#2} \; \mrm{d}S}
+
+
+% > Math Vector Basis text format ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+\newcommand{\eb}[1]
+{
+	\bm{e}_{#1}
+}
+
+\renewcommand{\vec}[1]
+{
+	\bm{#1}
+}
+
+\newcommand{\tensor}[1]
+{
+	\bm{#1}
+}
+
+\newcommand{\vecrm}[1]
+{
+	\mathbf{#1}
+}
+
+\newcommand{\veci}[2]
+{
+	{#1}_{#2}
+}
+
+% This one is pointless
+%\newcommand{\tensor}[3]
+%{
+	%	{#1}_{#2}^{#3}
+	%}
+
+\newcommand{\vecbasis}[2]
+{
+	\bm{#1}_{#2}
+}
+\newcommand{\vecbasisrm}[2]
+{
+	\mathbf{#1}_{#2}
+}
+
+\newcommand{\levicivita}{\epsilon{}}
+
+% > [New mod] div curl etc ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+\newcommand{\Div}[0]
+{
+	\nabla \cdot 
+}
+
+\newcommand{\Grad}[0]
+{
+	\nabla \,
+}
+
+\newcommand{\Curl}[0]
+{
+	\nabla \cross
+}
+
+\newcommand{\Laplacian}[0]
+{
+	\nabla^2 \,
+}
+
+\newcommand{\Divrm}[0]
+{
+	\mrm{div} \,
+}
+
+% > Math Text Formatting  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+\newcommand{\mrm}[1]
+{
+	\mathrm{#1}
+}
+
+\newcommand{\ndim}[1]
+{
+	{#1}^{*}
+}
+% > Math Bracket wrappers   ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+\newcommand{\LRBrac}[1]
+{
+	\left( #1 \right)
+}
+
+\newcommand{\lrbrac}[1]
+{
+	\left( #1 \right)
+}
+
+\newcommand{\lrbracS}[1]
+{
+	\left[ #1 \right]
+}
+
+\newcommand{\lrbracB}[1]
+{
+	\left\{ #1 \right\}
+}
+
+% ------------------------------------------------------------
+% Custom amsthm assumptions
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{assumption}{Assumption}[section]
+\newtheorem{concept}{Concept}[section]
+\newtheorem{theory}{Theory}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+
+\newtheorem{comment}{Comment}[section]
+\newtheorem{revise}{Revise}[section]
+
+\newtheorem{defi}{Definition}[]
+\newtheorem{identity}{Identity}[]
+
+% ------------------------------------------------------------
+%  Figures and citation
+
+% Figure custom captioning etc.
+\usepackage[labelfont=bf,
+figurename=Fig.,
+labelsep=space]{caption} 
+
+% use this for sub-figures
+\usepackage{subcaption}
+
+%% More packages
+%\usepackage{tgtermes} % times font
+
+\usepackage{cite}
+
+\newcommand{\figref}[1]{Fig. \ref{#1}}
+
+% ------------------------------------------------------------
+% Code blocks
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstdefinestyle{C}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2,
+	language=C
+}
+
+% ------------------------------------------------------------
+% Use VERBATIM for inline code
+\usepackage{verbatim}
+
+% ------------------------------------------------------------
+% `placeins` provides `\FloatBarrier{}` for figures/images
+\usepackage{placeins}
+
+% ------------------------------------------------------------
+% Enable strike out, underlines, etc.
+\usepackage{soul}
+
+% ------------------------------------------------------------
+% Enables 1000th's space separators, e.g., 1 000 240.001 150
+\usepackage{numprint}
+
+% ------------------------------------------------------------
+% Typesetting logos / key words
+\newcommand{\openfoam}{OpenFOAM}
+\newcommand{\C}{\texttt{C}}
+\newcommand{\CPP}{\texttt{C++}}
+\newcommand{\OOP}{\texttt{OOP}}
+
+% ------------------------------------------------------------
+% At end
+\usepackage{enumitem}
