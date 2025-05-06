@@ -70,6 +70,9 @@
 % Total derivative operators
 \newcommand{\TD}[2]{\frac{\mathrm{D}{#1}}{\mathrm{D} {#2}}}
 \newcommand{\TDN}[3]{\frac{\mathrm{D}^{#3} {#1}}{\mathrm{D} {#2} ^{#3}}}
+\newcommand{\TDbrac}[3]{\frac{\mathrm{D}}{\mathrm{D} {#2}} \left( {#1} \right)}
+\newcommand{\TDNbrac}[3]{\frac{\mathrm{D}^{#3}}{\mathrm{D} {#2}^{#3}} \left( {#1} \right)}
+
 
 % Mean Formatter
 \newcommand{\mean}[1]{\overline{#1}}
@@ -214,7 +217,7 @@ labelsep=space]{caption}
 %% More packages
 %\usepackage{tgtermes} % times font
 
-% Depreciated:
+%
 %\usepackage{cite}
 
 \newcommand{\figref}[1]{Fig. \ref{#1}}
