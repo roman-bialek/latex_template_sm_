@@ -55,7 +55,9 @@
 % Differential operators
 \newcommand{\de}[0]{\mathrm{d}}
 \newcommand{\dd}[2]{\frac{\mathrm{d}{#1}}{\mathrm{d} {#2}}}
+\newcommand{\ddbrac}[2]{\frac{\mathrm{d}}{\mathrm{d} {#2}} \left( {#1} \right)}
 \newcommand{\ddn}[3]{\frac{\mathrm{d}^{#3}{#1}}{\mathrm{d} {#2}^{#3}}}
+\newcommand{\ddnbrac}[3]{\frac{\mathrm{d}^{#3}}{\mathrm{d} {#2}^{#3}} \left( {#1} \right)}
 
 % Partial differential commands
 \newcommand{\pd}[2]{\frac{\partial{}{#1}}{\partial{} {#2}}}
@@ -212,7 +214,8 @@ labelsep=space]{caption}
 %% More packages
 %\usepackage{tgtermes} % times font
 
-\usepackage{cite}
+% Depreciated:
+%\usepackage{cite}
 
 \newcommand{\figref}[1]{Fig. \ref{#1}}
 
